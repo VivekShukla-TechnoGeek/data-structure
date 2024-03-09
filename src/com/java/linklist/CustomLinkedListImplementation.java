@@ -35,12 +35,30 @@ public class CustomLinkedListImplementation<E> implements CustomLinkedList<E> {
     }
 
     @Override
+    public boolean addFirst(E e) {
+        linkFirst(e);
+        return true;
+    }
+
+    private void linkFirst(E e) {
+        CustomNode<E> h = head;
+        CustomNode<E> newNode = new CustomNode<>(e, null);
+        head = newNode;
+        if (h == null) {
+            last = newNode;
+        } else {
+            head.next = h;
+        }
+        size++;
+    }
+
+    @Override
     public void printList() {
         CustomNode<E> t = head;
         while (t != null) {
-            System.out.print("\""+t.item + "\" ");
+            System.out.println("\"" + t.item + "\"");
             t = t.next;
         }
-        System.out.println();
     }
+
 }
