@@ -11,5 +11,7 @@ public class Main {
         cdList.addFirst(new CitizenData("Raja Ram", 9, "Ayodhya"));
         System.out.println("++++++++++++++++++ updated list after adding first position ++++++++++++++++++");
         cdList.printList();
+        System.out.println(cdList.add(2, new CitizenData("Suraj", 21, "Swaroop nagar, Kanpur")));
+        cdList.printList();
     }
 }

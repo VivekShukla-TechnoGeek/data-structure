@@ -61,4 +61,35 @@ public class CustomLinkedListImplementation<E> implements CustomLinkedList<E> {
         }
     }
 
+    @Override
+    public boolean add(int index, E e) {
+        validateIndex(index);
+        linkAt(index, e);
+        return true;
+    }
+
+    private void linkAt(int index, E e) {
+        if (index == 0)
+            linkFirst(e);
+        else if (index == size)
+            linkToLast(e);
+        else {
+            CustomNode<E> newNode = new CustomNode<>(e, null);
+            CustomNode<E> temp = head;
+            int i = 0;
+            while (i < index - 1) {
+                temp = temp.next;
+                i++;
+            }
+            CustomNode<E> currentNode = temp.next;
+            newNode.next = currentNode;
+            temp.next = newNode;
+            size++;
+        }
+    }
+
+    private void validateIndex(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException("Index: " + index + " Size: " + size);
+    }
 }

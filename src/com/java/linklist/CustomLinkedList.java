@@ -7,4 +7,6 @@ public interface CustomLinkedList<E> {
     void printList();
 
     boolean addFirst(E e);
+
+    boolean add(int index, E e);
 }
