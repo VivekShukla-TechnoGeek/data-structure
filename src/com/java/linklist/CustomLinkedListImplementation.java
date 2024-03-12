@@ -131,4 +131,32 @@ public class CustomLinkedListImplementation<E> implements CustomLinkedList<E> {
         head = head.next;
         size--;
     }
+
+
+    @Override
+    public boolean remove(Object o) {
+        CustomNode<E> temp = head;
+        if (o == null) {
+            int i = 0;
+            while (i < size && temp != null) {
+                if (temp.item == null) {
+                    unlink(i);
+                    return true;
+                }
+                temp = temp.next;
+                i++;
+            }
+        } else {
+            int i = 0;
+            while (i < size && temp != null) {
+                if (o.equals(temp.item)) {
+                    unlink(i);
+                    return true;
+                }
+                temp = temp.next;
+                i++;
+            }
+        }
+        return false;
+    }
 }

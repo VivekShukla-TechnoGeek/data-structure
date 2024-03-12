@@ -13,4 +13,6 @@ public interface CustomLinkedList<E> {
     int size();
 
     boolean remove(int index);
+
+    boolean remove(Object o);
 }
