@@ -9,4 +9,8 @@ public interface CustomLinkedList<E> {
     boolean addFirst(E e);
 
     boolean add(int index, E e);
+
+    int size();
+
+    boolean remove(int index);
 }

@@ -13,5 +13,8 @@ public class Main {
         cdList.printList();
         System.out.println(cdList.add(2, new CitizenData("Suraj", 21, "Swaroop nagar, Kanpur")));
         cdList.printList();
+        cdList.remove(2);
+        System.out.println("++++++++++++++++++ updated list after removing element from index ++++++++++++++++++");
+        cdList.printList();
     }
 }

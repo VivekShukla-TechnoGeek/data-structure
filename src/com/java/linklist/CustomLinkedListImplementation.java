@@ -92,4 +92,43 @@ public class CustomLinkedListImplementation<E> implements CustomLinkedList<E> {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException("Index: " + index + " Size: " + size);
     }
+
+    @Override
+    public int size() {
+        return listSize();
+    }
+
+    private int listSize() {
+        return this.size;
+    }
+
+    @Override
+    public boolean remove(int index) {
+        validateIndex(index);
+        unlink(index);
+        return true;
+    }
+
+    private void unlink(int index) {
+        if (index == 0)
+            unlinkFirst();
+        else {
+            CustomNode<E> temp = head.next, prev = head;
+            int i = 1;
+            while (i < index && temp != null) {
+                prev = temp;
+                temp = temp.next;
+                i++;
+            }
+            prev.next = temp.next;
+            if (index == size)
+                last = prev;
+            size--;
+        }
+    }
+
+    private void unlinkFirst() {
+        head = head.next;
+        size--;
+    }
 }
