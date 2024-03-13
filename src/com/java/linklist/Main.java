@@ -1,3 +1,5 @@
+package com.java.linklist;
+
 import com.java.linklist.CitizenData;
 import com.java.linklist.CustomLinkedList;
 import com.java.linklist.CustomLinkedListImplementation;
