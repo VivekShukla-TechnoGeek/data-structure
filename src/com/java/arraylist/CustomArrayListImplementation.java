@@ -57,4 +57,19 @@ public class CustomArrayListImplementation<E> implements CustomArrayList<E> {
     public int size() {
         return this.size;
     }
+
+    @Override
+    public boolean add(int index, E e) {
+        validateIndex(index);
+        ensureCapacity(this.size + 1);
+        System.arraycopy(this.elementData, index, this.elementData, index + 1, this.size - index);
+        this.elementData[index] = e;
+        this.size++;
+        return true;
+    }
+
+    private void validateIndex(int index) {
+        if (index < 0 || index > size)
+            throw new IllegalArgumentException("Illegal index:" + index);
+    }
 }

@@ -8,7 +8,9 @@ public class Main {
         ca1.add(3);
         System.out.println("ca1 list size: " + ca1.size());
         ca1.printList();
-        System.out.println("++++++++++++++++++");
+        ca1.add(2, 32);
+        System.out.println("++++++++++++++++++ updated ca1 list ++++++++++++++++++");
+        ca1.printList();
         CustomArrayList<Integer> ca2 = new CustomArrayListImplementation<>(3);
         ca2.add(9);
         ca2.add(8);
