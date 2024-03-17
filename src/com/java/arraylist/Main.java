@@ -32,6 +32,9 @@ public class Main {
         System.out.println("++++++++++++++++++ updated ca2 list after remove object operation ++++++++++++++++++");
         System.out.println("updated ca2 list size: " + ca2.size());
         ca2.printList();
-        ca2.remove("H6");
+        ca2.set(1, "H10");
+        System.out.println("++++++++++++++++++ updated ca2 list set operation ++++++++++++++++++");
+        System.out.println("updated ca2 list size: " + ca2.size());
+        ca2.printList();
     }
 }

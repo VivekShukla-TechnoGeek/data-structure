@@ -108,4 +108,12 @@ public class CustomArrayListImplementation<E> implements CustomArrayList<E> {
         }
         return false;
     }
+
+    @Override
+    public boolean set(int index, E e) {
+        if (index < 0 || index > this.size - 1)
+            throw new IllegalArgumentException("Illegal index:" + index);
+        this.elementData[index] = e;
+        return true;
+    }
 }

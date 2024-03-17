@@ -13,4 +13,6 @@ public interface CustomArrayList<E> {
 
     boolean remove(Object obj);
 
+    boolean set(int index, E e);
+
 }
