@@ -11,17 +11,27 @@ public class Main {
         ca1.add(2, 32);
         System.out.println("++++++++++++++++++ updated ca1 list ++++++++++++++++++");
         ca1.printList();
-        CustomArrayList<Integer> ca2 = new CustomArrayListImplementation<>(3);
-        ca2.add(9);
-        ca2.add(8);
+        System.out.println("++++++++++++++++++");
+        CustomArrayList<String> ca2 = new CustomArrayListImplementation<>(3);
+        ca2.add("H9");
+        ca2.add("H8");
         System.out.println("ca2 list size: " + ca2.size());
         ca2.printList();
-        ca2.add(7);
-        ca2.add(6);
-        ca2.add(5);
-        ca2.add(4);
+        ca2.add("H7");
+        ca2.add("H6");
+        ca2.add("H5");
+        ca2.add("H4");
         System.out.println("++++++++++++++++++ updated ca2 list ++++++++++++++++++");
         System.out.println("updated ca2 list size: " + ca2.size());
         ca2.printList();
+        ca2.remove(5);
+        System.out.println("++++++++++++++++++ updated ca2 list after remove operation ++++++++++++++++++");
+        System.out.println("updated ca2 list size: " + ca2.size());
+        ca2.printList();
+        ca2.remove("H6");
+        System.out.println("++++++++++++++++++ updated ca2 list after remove object operation ++++++++++++++++++");
+        System.out.println("updated ca2 list size: " + ca2.size());
+        ca2.printList();
+        ca2.remove("H6");
     }
 }

@@ -69,7 +69,43 @@ public class CustomArrayListImplementation<E> implements CustomArrayList<E> {
     }
 
     private void validateIndex(int index) {
-        if (index < 0 || index > size)
+        if (index < 0 || index > this.size)
             throw new IllegalArgumentException("Illegal index:" + index);
+    }
+
+    @Override
+    public boolean remove(int index) {
+        if (index < 0 || index > this.size - 1)
+            throw new IllegalArgumentException("Illegal index:" + index);
+        fastRemove(index);
+        return true;
+    }
+
+    private void fastRemove(int index) {
+        int newSize = this.size - 1;
+        if (newSize > index) {
+            System.arraycopy(this.elementData, index + 1, this.elementData, index, newSize - index);
+        }
+        this.elementData[this.size = newSize] = null;
+    }
+
+    @Override
+    public boolean remove(Object obj) {
+        if (obj == null) {
+            for (int i = 0; i < this.size; i++) {
+                if (this.elementData[i] == null) {
+                    fastRemove(i);
+                    return true;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (obj.equals(this.elementData[i])) {
+                    fastRemove(i);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
